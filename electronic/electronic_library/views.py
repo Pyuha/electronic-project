@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import AddStuff
+from .models import ViewStuff
 
 def main(request):
 
@@ -7,14 +7,23 @@ def main(request):
 
 def stuff(request):
 
-    return render(request, 'stuff.html')
+    all_stuff = ViewStuff.objects.all()
+
+    context = {
+        'all_stuff' : all_stuff
+    }
+
+    return render(request, 'stuff.html', context)
 
 def add_to_basket(request):
-    if request.POST.get('add_note') == 'Добавить':
 
-        AddStuff.objects.create(
-            title = request.POST.get('stuff_title'),
-            type = request.POST.get('stuff_type'),
+    if request.POST.get('add_to_basket') == 'Сохранить':
+
+        ViewStuff.objects.create(
+            promo    =request.POST.get('stuff_promo'),
+            title    =request.POST.get('stuff_title'),
+            price    =request.POST.get('stuff_price '),
         )
 
     return render(request, 'basket.html')
+
