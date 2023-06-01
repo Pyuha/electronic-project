@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="../static/img/logo.png" alt="Логотип">
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000">Главная</a></li>
+                        <li><a href="http://127.0.0.1:8000/stuff/">Каталог</a></li>
+                        <li><a href="http://127.0.0.1:8000/basket/">Корзина</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <h1>Добавить железо</h1>
+    <form action="{% url 'basket' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="stuff_title" placeholder="Название" required><br>
+        <input type="text" name="stuff_type" placeholder="Тип" required><br>
+        <input type="submit" name="add_note" value="Добавить"><br>
+</body>
+</html>
