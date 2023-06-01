@@ -25,7 +25,8 @@
             </div>
         </div>
     </header>
-    <h1>Ноутбуки</h1>
+    <div class="stuff">
+        <h1>Ноутбуки</h1>
         <section class="view-stuff">
             {% for stuff in all_stuff %}
             <div class="view-stuff-item">
@@ -33,10 +34,12 @@
                 <div class="view-stuff-item-text">
                     <h2>{{stuff.title}}</h2>
                     <p>{{stuff.price}}</p>
+                    <input type="submit" name="add_to_basket" value="В корзину"></p>
                 </div>
             </div>
             {% endfor %}
-        <a class="main-screen-btn adding-screen-btn-to-home" href="{% url 'main' %}">На главную</a>
-    </section>
+        </section>
+    </div>
+    <a class="main-screen-btn" href="{% url 'main' %}">На главную</a>
 </body>
 </html>

@@ -17,7 +17,7 @@ def stuff(request):
 
 def add_to_basket(request):
 
-    if request.POST.get('add_to_basket') == 'Сохранить':
+    if request.POST.get('add_to_basket') == 'В корзину':
 
         ViewStuff.objects.create(
             promo    =request.POST.get('stuff_promo'),
