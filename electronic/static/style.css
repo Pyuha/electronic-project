@@ -67,7 +67,6 @@ h2 {
     font-family:'MusticaPro';
     font-size: 36pt;
     color: white;
-    padding-left: 200px;
 }
 
 .promo p {
@@ -124,6 +123,12 @@ h2 {
 
 /* ________________________страница каталога__________________________________ */
 
+.stuff h1 {
+    font-family:'MusticaPro';
+    font-size: 36pt;
+    color: white;
+    margin-left: 200px;
+}
 
 .stuff p {
     font-family: 'Roboto';
@@ -201,4 +206,85 @@ h2 {
 
 /* ________________________страница корзина__________________________________ */
 
+.basket h1 {
+    font-family:'MusticaPro';
+    font-size: 36pt;
+    color: white;
+    margin-left: 200px;
+}
+
+.basket-table {
+	width: 75%;
+	border:#000000;
+    background-color: #000000;
+	margin-bottom: 20px;
+    margin-left: 200px;
+    border-radius: 20px;
+	border-collapse: separate;
+}
+
+.basket-table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: #000000;
+	padding: 10px 15px;
+	background: #000000;
+	font-size: 28px;
+	border-top: 1px solid #000000;
+    font-family:'MusticaPro';
+    color: white;
+}
+
+.basket-table thead tr th:first-child {
+	border-radius: 20px 0 0 0;
+}
+
+.basket-table thead tr th:last-child {
+	border-radius: 0 20px 0 0;
+}
+
+.basket-table tbody td {
+	text-align: left;
+	border: none;
+	vertical-align: center;
+    font-family: 'Roboto';
+    font-size: 14pt;
+    padding: 10px;
+	line-height: 20px;
+	border-top: 1px solid #ffffff;
+}
+
+.basket-table tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 20px;
+}
+
+.basket-table tbody tr:last-child td:last-child {
+	border-radius: 0 0 20px 0;
+}
+
+.stuff-image img {
+    width: 288px;
+}
+
+/* ________________________страница подвала__________________________________ */
+
+footer {
+    padding-top: 25px;
+    width: 1860px;
+    height: 300px;
+    background-color: #000000;
+}
+
+.main-footer h2 {
+    margin-left: 200px;
+}
+
+.logo-footer li{
+    font-size: 14px;
+    font-family: 'Roboto';
+    white-space: pre-line;
+    display: inline-table;
+    padding-left: -50px;
+    margin-left: 200px;
+}
 

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>магазик</title>
+    <title>Главная</title>
 </head>
 <body>
     <header class="main-header">
@@ -51,6 +51,23 @@
                     компьютерных игр.</p>
             </div>
         </div>
-        </section>
+    </section>
+    <footer class="main-footer">
+        <div class="container"> 
+            <h2>ASP SERSO</h2>
+            <div class="logo-footer">
+                <li>Город: Москва
+                    Адрес: Колодезный пер., д. 3, стр.25 , 
+                    Вход в Серсо расположен на Русаковской 
+                    набережной у метромоста. 
+                    Тел. (Ремонт) : (495) 967-3872, (495) 926-8313
+                    Часы работы: ПН-ВС 9:00 - 21:00
+                
+                    © 2023. Все права защищены</li>
+                <li><a class="navigation-item" href="{% url 'main' %}">Главная</a></li>
+                <li><a class="navigation-item" href="{% url 'stuff' %}">Товары</a></li>
+            </div> 
+        </div>
+    </footer>
 </body>
 </html>

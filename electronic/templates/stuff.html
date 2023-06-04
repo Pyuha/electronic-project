@@ -26,14 +26,14 @@
         </div>
     </header>
     <div class="stuff">
-        <h2>Ноутбуки</h2>
+        <h1>Ноутбуки</h1>
         <section class="view-stuff">
             {% for stuff in all_stuff %}
             <div class="view-stuff-item">
                 <img class="view-stuff-item-img" src="{{stuff.promo}}" alt="promo">
                     <div class="view-stuff-item-text">
                         <h2>{{stuff.title}}</h2>
-                        <p>{{stuff.price}}</p>
+                        <p>{{stuff.price}} ₽</p>
 
                         <form action="{% url 'stuff' %}" method="post">
                             {% csrf_token %}
@@ -46,5 +46,22 @@
         </section>
     </div>
     <a class="main-screen-btn" href="{% url 'main' %}">На главную</a>
+    <footer class="main-footer">
+        <div class="container"> 
+            <h2>ASP SERSO</h2>
+            <div class="logo-footer">
+                <li>Город: Москва
+                    Адрес: Колодезный пер., д. 3, стр.25 , 
+                    Вход в Серсо расположен на Русаковской 
+                    набережной у метромоста. 
+                    Тел. (Ремонт) : (495) 967-3872, (495) 926-8313
+                    Часы работы: ПН-ВС 9:00 - 21:00
+                
+                    © 2023. Все права защищены</li>
+                <li><a class="navigation-item" href="{% url 'main' %}">Главная</a></li>
+                <li><a class="navigation-item" href="{% url 'stuff' %}">Товары</a></li>
+            </div> 
+        </div>
+    </footer>
 </body>
 </html>
