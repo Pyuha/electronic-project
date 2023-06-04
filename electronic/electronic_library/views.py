@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ViewStuff
+from .models import ViewStuff, AddStuff
 
 def main(request):
 
@@ -13,17 +13,29 @@ def stuff(request):
         'all_stuff' : all_stuff
     }
 
+    from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+    try:
+        stuff = ViewStuff.objects.get(title=request.POST.get('stuff_title'))
+
+        if len(AddStuff.objects.all()) > 0 and len(AddStuff.objects.filter(title=stuff.title)) > 0:
+            print("Товар уже в списке")
+        else:
+            AddStuff.objects.create(
+                title = stuff.title,
+                price = stuff.price,
+                promo = stuff.promo
+            )
+    except (ObjectDoesNotExist, MultipleObjectsReturned):
+        pass
+
     return render(request, 'stuff.html', context)
 
-def add_to_basket(request):
+def basket(request):
 
-    if request.POST.get('add_to_basket') == 'В корзину':
+    total_basket = 0
+    basket = AddStuff.objects.all()
 
-        ViewStuff.objects.create(
-            promo    =request.POST.get('stuff_promo'),
-            title    =request.POST.get('stuff_title'),
-            price    =request.POST.get('stuff_price '),
-        )
+    return render(request, 'basket.html', {'basket' : basket, "total_basket":total_basket})
 
-    return render(request, 'basket.html')
+    
 

@@ -67,6 +67,7 @@ h2 {
     font-family:'MusticaPro';
     font-size: 36pt;
     color: white;
+    padding-left: 200px;
 }
 
 .promo p {
@@ -123,12 +124,6 @@ h2 {
 
 /* ________________________страница каталога__________________________________ */
 
-.stuff h1 {
-    font-family:'Roboto';
-    font-size: 36pt;
-    color: white;
-    padding-left: 200px;
-}
 
 .stuff p {
     font-family: 'Roboto';
@@ -203,3 +198,7 @@ h2 {
     color: black;
     text-decoration: none;
 }
+
+/* ________________________страница корзина__________________________________ */
+
+

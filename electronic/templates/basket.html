@@ -25,11 +25,30 @@
             </div>
         </div>
     </header>
-    <h1>Добавить железо</h1>
-    <form action="{% url 'basket' %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="stuff_title" placeholder="Название" required><br>
-        <input type="text" name="stuff_type" placeholder="Тип" required><br>
-        <input type="submit" name="add_note" value="Добавить"><br>
+    <div class="container">
+        <section class="order">
+            <div class="basket">
+                <h2 class="basket-title">Корзина</h2>
+                <p>,kf,kf,kf</p>
+                <table class="order-table">
+                    <tr>
+                        <td></td>
+                        <td class="product-title"><b>Товар</b></td>
+                        <td class="product-price"><b>Цена</b></td>
+                    </tr>   
+                    {% if basket %}
+                        {% for stuff in basket %}
+                            <tr>
+                                <td class="stuff-image"><img src="{{stuff.promo}}" alt="promo"></td>
+                                <td class="stuff-title">{{stuff.title}}</td>
+                                <td class="stuff-price">{{stuff.price}}</td>
+                            </tr>    
+                        {% endfor %}
+                    {% endif %}  
+                </table>
+            </div>
+        </section>
+    </div>
+    <a class="main-screen-btn" href="{% url 'main' %}">На главную</a>
 </body>
 </html>

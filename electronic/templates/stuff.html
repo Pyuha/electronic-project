@@ -26,17 +26,22 @@
         </div>
     </header>
     <div class="stuff">
-        <h1>Ноутбуки</h1>
+        <h2>Ноутбуки</h2>
         <section class="view-stuff">
             {% for stuff in all_stuff %}
             <div class="view-stuff-item">
                 <img class="view-stuff-item-img" src="{{stuff.promo}}" alt="promo">
-                <div class="view-stuff-item-text">
-                    <h2>{{stuff.title}}</h2>
-                    <p>{{stuff.price}}</p>
-                    <input type="submit" name="add_to_basket" value="В корзину"></p>
-                </div>
-            </div>
+                    <div class="view-stuff-item-text">
+                        <h2>{{stuff.title}}</h2>
+                        <p>{{stuff.price}}</p>
+
+                        <form action="{% url 'stuff' %}" method="post">
+                            {% csrf_token %}
+                            <input type='hidden' name="stuff_title" value="{{stuff.title}}"/>
+                            <input class="basket-order-button" type="submit" name="add_to_basket" value="В корзину">
+                        </form>
+                    </div>
+                </div>                
             {% endfor %}
         </section>
     </div>
